@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/modules/count/adapters/screens/count.dart';
+import 'package:flutter_application_1/modules/count/adapters/screens/count2.dart';
 
 void main() {
   runApp(const App());
@@ -10,6 +10,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: Count());
+    return const MaterialApp(debugShowCheckedModeBanner: false, home: Count2());
   }
 }
