@@ -5,13 +5,21 @@ class Count extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextStyle fontTouch =
+        const TextStyle(fontSize: 32.0, color: Colors.deepPurple);
     return Scaffold(
       appBar: AppBar(title: const Text("Contador")),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [Text("Numero de toques"), Text("0")],
+          children: [
+            Text("Numero de toques", style: fontTouch),
+            Text(
+              "0",
+              style: fontTouch,
+            )
+          ],
         ),
       ),
     );
