@@ -10,15 +10,37 @@ class FirstForm extends StatelessWidget {
         title: const Text("creacion de cuenta"),
       ),
       body: Form(
-        child: TextFormField(
-          decoration: const InputDecoration(labelText: 'Nombre Completo:*'),
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Campo Obligatorio';
-            } else {
-              return null;
-            }
-          },
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.all(16),
+              child: TextFormField(
+                decoration:
+                    const InputDecoration(labelText: 'Nombre Completo:*'),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Campo Obligatorio';
+                  } else {
+                    return null;
+                  }
+                },
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.all(16),
+              child: TextFormField(
+                decoration:
+                    const InputDecoration(labelText: 'Correo Electronico:*'),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Campo Obligatorio';
+                  } else {
+                    return null;
+                  }
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
