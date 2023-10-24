@@ -15,6 +15,7 @@ class BottomNavigationTab extends StatelessWidget {
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
         BottomNavigationBarItem(
             icon: Icon(Icons.settings), label: 'Configuracion'),
+        BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: 'Noticias'),
       ],
       currentIndex: selectedIndex,
       selectedItemColor: ColorsApp.primaryColor,

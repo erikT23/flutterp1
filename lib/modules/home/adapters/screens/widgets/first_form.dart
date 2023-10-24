@@ -67,9 +67,11 @@ class _FirstFormState extends State<FirstForm> {
                       ),
                       validator: (value) {
                         RegExp regex = RegExp(ValidationsApp.email);
-                        if ( value = null||value!.isEmpty) {
-                          return 'Por favor ingresa tu correo';
-                        }else if (!re)
+                        if (value == null || value.isEmpty) {
+                          return 'campo obligatorio';
+                        } else if (!regex.hasMatch(value)) {
+                          return 'Introduce un correo válido';
+                        }
                         return null;
                       },
                       keyboardType: TextInputType.emailAddress,
@@ -99,7 +101,7 @@ class _FirstFormState extends State<FirstForm> {
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             minimumSize: const Size(200, 50),
-                            backgroundColor: ColorsApp.successColor),
+                            backgroundColor: ColorsApp.primaryColor),
                         onPressed: _isButtonDisable
                             ? null
                             : () {
