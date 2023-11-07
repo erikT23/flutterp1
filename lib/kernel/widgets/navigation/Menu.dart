@@ -3,7 +3,6 @@ import 'package:flutter_application_1/config/navigation/home_stack.dart';
 import 'package:flutter_application_1/config/navigation/news_stack.dart';
 import 'package:flutter_application_1/kernel/widgets/navigation/Bottom_navigation_tab.dart';
 import 'package:flutter_application_1/modules/auth/adapters/screens/profile.dart';
-import 'package:flutter_application_1/modules/news/adapters/screens/news.dart';
 import 'package:flutter_application_1/modules/settings/adapters/screens/Settings.dart';
 
 class Menu extends StatefulWidget {
