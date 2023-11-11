@@ -24,7 +24,6 @@ class NetworkModule {
     },
   );
 
-
   Future<String?> getToken() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getString('token');
@@ -44,7 +43,6 @@ class NetworkModule {
 
   Dio get instance => _dio!;
 }
-
 
 //como mandarlo a llamar
 
