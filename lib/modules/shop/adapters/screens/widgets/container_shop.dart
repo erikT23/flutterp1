@@ -1,9 +1,22 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/kernel/themes/Colors_app.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ContainerShop extends StatelessWidget {
-  const ContainerShop({super.key});
+  final String title;
+  final String description;
+  final double initialRating;
+  final String imageUri;
+  final double price;
+  const ContainerShop(
+      {super.key,
+      required this.title,
+      required this.description,
+      required this.initialRating,
+      required this.imageUri,
+      required this.price});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +26,7 @@ class ContainerShop extends StatelessWidget {
       elevation: 5,
       child: Column(children: [
         Image.asset(
-          'assets/images/Logo-utez.png',
+          imageUri,
           width: widthImage,
           height: 75,
           fit: BoxFit.fitWidth,
@@ -30,24 +43,29 @@ class ContainerShop extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              Align(
-                alignment: Alignment.topCenter,
-                child: RatingBar.builder(
-                  initialRating: 3,
-                  minRating: 1,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemSize: 8,
-                  itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  itemBuilder: (context, _) => const Icon(
-                    Icons.star,
-                    color: Colors.amber,
+              Column(
+                children: [
+                  Text(
+                    '/$price',
+                    style: const TextStyle(color: Colors.black54, fontSize: 8),
                   ),
-                  onRatingUpdate: (rating) {
-                    print(rating);
-                  },
-                ),
+                  RatingBar.builder(
+                    initialRating: 3,
+                    minRating: 1,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemCount: 5,
+                    itemSize: 8,
+                    itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    itemBuilder: (context, _) => const Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                    ),
+                    onRatingUpdate: (rating) {
+                      print(rating);
+                    },
+                  ),
+                ],
               )
             ],
           ),
@@ -59,13 +77,21 @@ class ContainerShop extends StatelessWidget {
               style: TextStyle(color: Colors.black54, fontSize: 8),
             )),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/shop/detail-shop', arguments: {
+              'title': title,
+              'description': description,
+              'initialRating': initialRating,
+              'imageUri': imageUri,
+              'price': price
+            });
+          },
           style: OutlinedButton.styleFrom(
               foregroundColor: ColorsApp.successColor,
               backgroundColor: Colors.white,
               side: const BorderSide(color: ColorsApp.successColor),
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10))),
+                  borderRadius: BorderRadius.circular(16))),
           child: const Text("Ver mas"),
         )
       ]),
