@@ -13,9 +13,9 @@ class ShopCart extends StatelessWidget {
           backgroundColor: ColorsApp.primaryColor,
           foregroundColor: Colors.white,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: const ContainerShopCart(),
+        body: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: ContainerShopCart(),
         ));
   }
 }

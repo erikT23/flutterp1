@@ -8,7 +8,7 @@ class DetailShop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dynamic rawArgs = ModalRoute.of(context)!.settings.arguments;
-    final Map<String, dynamic> args = (rawArgs as Map<String, dynamic>) ?? {};
+    final Map<String, dynamic> args = (rawArgs as Map<String, dynamic>);
     final title = args['text'] ?? '';
     final description = args['description'] ?? '';
     final initialRating = args['initialRating'] ?? 0.0;
@@ -38,7 +38,7 @@ class DetailShop extends StatelessWidget {
                     child: Text(
                       title,
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     )),
                 const Spacer(),
                 Text('\$ $price'),
@@ -60,12 +60,12 @@ class DetailShop extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Text(
             description,
-            style: TextStyle(fontSize: 12, color: Colors.black),
+            style: const TextStyle(fontSize: 12, color: Colors.black),
           )
         ],
       ),

@@ -7,7 +7,7 @@ class ListUsers extends StatelessWidget {
   String getInitials(String name) {
     List<String> names = name.split(" ");
     String initials = "";
-    if (names.length > 0) {
+    if (names.isNotEmpty) {
       initials += names[0][0];
     }
     if (names.length > 1) {
