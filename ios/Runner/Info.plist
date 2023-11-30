@@ -45,5 +45,7 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSLocationWhenInUSedUsageDescription</key>
+	<string>I need this to obtain access for the user to get the products available on his region</string>
 </dict>
 </plist>
